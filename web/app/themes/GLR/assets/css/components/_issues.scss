@@ -1,0 +1,76 @@
+.issues {
+    .issue {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: $small) {
+            &:nth-of-type(even) {
+                .links {
+                    order: 1;
+                }
+
+                figure {
+                    order: 2;
+                }
+            }
+        }
+
+        
+        figure, .links {
+            width: 50%;
+            padding: 40px;
+
+            @media (max-width: $small) {
+                width: 100%;
+
+                span {
+                    width: 100%;
+                }
+            }
+        }
+
+        .links {
+            background: #f0f0f0;
+
+            ul {
+                text-align: left;
+                padding: 0;
+            }
+
+            small {
+                font-size: 12px;
+                display: block;
+                width: 100%;
+                text-transform: uppercase;
+                font-family: $heading;
+                color: #878b8c;
+                letter-spacing: .1em;
+            }
+            
+            li {
+                font-family: $heading;
+                list-style: none;
+                width: 100%;
+                font-weight: 600;
+                font-size: 22px;
+                margin-bottom: 10px;
+
+                a {
+                    color: $blue;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    flex-wrap: wrap;
+                }
+
+                span {
+                    color: #498cca;
+                    font-size: 12px;
+                    display: inline-block;
+                    margin-left: auto;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/*!
+ * NWSREACT Styles
+ */
+@import "https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800";
+@import "https://fonts.googleapis.com/css?family=PT+Serif:400,700";
+@import 'classes';
+
+// -----------------------------------------------
+
+// Dimensions
+$maxWidth: 1148px;
+$pad: 25px;
+
+// Fonts
+$font: Arial, sans-serif;
+$heading: "Montserrat", sans-serif;
+$subtext: "PT Serif", serif;
+
+// Colours
+$default: #222;
+$grey: #4c4d4f;
+$lightGrey: #818385;
+$borderGrey: #e4e5e3;
+$blue: #0d4b72;
+$buttonBlue: #498cca;
+$lightBlue: #91c7d1;
+$green: #72b17f;
+$red: #cf4935;
+
+// -----------------------------------------------
+
+@import 'generics';
+
+@import 'layout/_header';
+@import 'layout/_header-mobile';
+@import 'layout/_footer';
+@import 'layout/_masthead';
+
+// -----------------------------------------------
+
+@import 'pages/_home';
+@import 'pages/_page';
+
+// -----------------------------------------------
+
+@import 'components/_icons';
+@import 'components/_forms';
+@import 'components/_button';
+@import 'components/_articles';
+@import 'components/_join-callout';
+@import 'components/_groups';
+@import 'components/_leaders';
+@import 'components/_issues';
+@import 'components/_filters';

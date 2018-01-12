@@ -1,0 +1,22 @@
+.leaders {
+    display: flex;
+    flex-wrap: wrap;
+
+    figure {
+        width: 33%;
+        padding: $pad;
+
+        img {
+            @include borderRadius(100%)
+        }
+
+        strong {
+            color: #878b8c;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            font-weight: 600;
+            font-family: $heading;
+        }
+    }
+}

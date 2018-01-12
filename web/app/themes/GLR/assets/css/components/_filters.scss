@@ -1,0 +1,17 @@
+.filters {
+    background: #f0f0f0;
+
+    .wrapper {
+        display: flex;
+        padding: 36px;
+
+        select {
+            width: 50%;
+        }
+
+        select, input {
+            padding: 10px !important;
+            margin: 0 20px !important;
+        }
+    }
+}

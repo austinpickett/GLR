@@ -1,0 +1,82 @@
+.news a {
+    color: #498cca;
+    font-size: 15px;
+    font-family: $heading;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.articles {
+    margin-top: $pad;
+}
+
+.article {
+    border-top: 1px solid #e4e5e3;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    font-family: $heading;
+    text-align: left;
+
+    &:not(:first-of-type) {
+        margin-bottom: 40px;
+
+        figure {
+            width: 25%;
+        }
+
+        .excerpt a {
+            font-size: 22px;
+        }
+    }
+
+    .excerpt {
+        padding: 35px;
+        
+        a {
+            color: $blue;
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+    }
+
+    .excerpt, figure {
+        width: 50%;
+    }
+
+    .meta {
+        color: #878b8c;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-size: 12px;
+    }
+
+    .tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $green;
+        color: #FFF;
+        text-align: center;
+        padding: 4px 2em;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .2em;
+    }
+
+    @media (max-width: $small) {
+        .excerpt, figure {
+            width: 100% !important;
+        }
+
+        .excerpt {
+            padding: $pad
+        }
+    }
+}

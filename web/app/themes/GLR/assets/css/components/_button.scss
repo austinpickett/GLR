@@ -1,0 +1,30 @@
+.btn {
+	@include userSelect(none);
+	position: relative;
+	display: inline-block;
+	@include sq(auto);
+	overflow: hidden;
+	vertical-align: middle;
+	background: $red;
+	@include borderRadius(4em);
+	box-shadow: none;
+	font-size: 12px;
+	font-family: $heading;
+	font-weight: 700;
+	letter-spacing: .2em;
+
+	&:hover {
+		background: rgba($red, .8);
+		text-decoration: none;
+	}
+
+	&.light-blue {
+		background: $lightBlue !important; 
+		color: #363636;
+	}
+
+	&.blue {
+		background: $buttonBlue !important;
+		color: #FFF;
+	}
+}

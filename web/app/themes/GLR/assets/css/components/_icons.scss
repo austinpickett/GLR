@@ -1,0 +1,16 @@
+i[class^="icon-"] {
+	@include userSelect(none);
+	display: inline-block;
+	vertical-align: middle;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	&.invert {
+		@include filter(invert(1));
+	}
+}
+i.icon-mail {
+	height: 22px;
+	width: 32px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAWCAMAAACWh252AAAAh1BMVEVJjMr///9JjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpPIU7TAAAALHRSTlMAAAEDBw0QExQXHCczQEFLTldeX3FygoOTo6SltLXDxMzQ29zl5uzt8fP095Eq8ekAAADTSURBVHjahdLbFoIgFEXRc1BKwwzLTLtYVJYl//99CeigxGo/OJA1H4HkJn/sloDt4wKkLMLJl4WFlC04CYYwGKoxcdRgmtWrMbCqN54GE4yrLR0Cuq1ixA5gcDhHnyA6HwK0AMn6kRLbSfpYE3wHANFlH/Q92F8ixAEAurvOTZ9fdxRdALypMw/Ay+qG4wjgT85EOZuVgrVHB6gO4Of3e+7rnwHQXW2xUN9eWGC6nbqwwO2gryxwOqAWPXA7oBEGLNuDC4zQoOHogk5I+ffJ/X20L3hQL0H6liupAAAAAElFTkSuQmCC);
+}

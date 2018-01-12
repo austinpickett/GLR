@@ -1,0 +1,109 @@
+#header
+	padding: 15px 0 10px
+	z-index: 500
+	+cover
+	bottom: auto
+	+transition(.35s )
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, .5)
+	background: white
+	position: fixed
+
+	ul, li
+		display: inline
+		margin: 0
+		padding: 0
+
+	li a
+		display: inline-block
+		vertical-align: middle
+		text-decoration: none
+		font-size: 17px
+		font-weight: 700
+		color: $blue
+
+		&:after
+			content: ''
+			display: block
+			visibility: hidden
+			height: 3px
+			background: $red
+			+transform(translateY(-30px))
+			+opacity(0)
+
+		&:hover::after
+			visibility: visible
+			+transform(translateY(-20px))
+			+transition(.4s ease-in-out)
+			+opacity(1)
+
+	@media (min-width: $small)
+		.current_page_item, .current_page_parent 
+			a
+				color: #498cca
+				
+				&::after
+					visibility: visible
+					+opacity(1)
+					+transform(translateY(-20px))
+
+	ul li
+		position: relative
+		color: $blue
+		text-transform: uppercase
+		letter-spacing: .1em
+		font-family: $heading
+		font-weight: 600
+
+	ul > li:not(:last-child) > a
+		margin-right: 28px
+
+		@media (max-width: 1280px)
+			margin-right: 15px
+
+	> .row.wrapper
+		display: flex
+		align-items: center
+
+	.main-nav
+		margin-left: auto
+
+		> ul
+			margin-right: $pad
+			line-height: 70px
+	
+	.menu-item-has-children a:hover + .sub-menu
+		left: 0
+		transition-delay: .25s
+		-webkit-transition-delay: .25s
+
+#header ul.sub-menu
+	position: absolute
+	left: -999em
+	top: 0
+	z-index: -1
+	+transition(0s ease)
+	margin-top: 0
+	padding-top: 45px
+	line-height: normal
+	background: #FFF
+	margin-left: -20px
+
+	&:hover
+		left: 0
+	
+	li, a
+		display: inline-block
+		width: 100%
+		margin: 0
+
+	a
+		padding: 12px 45px 12px 22px
+		margin-right: 0 !important
+		font-size: 14px
+
+		&:hover
+			color: $red
+			+transition(.3s ease-in-out)
+
+		&:after
+			content: none

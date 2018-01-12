@@ -1,0 +1,49 @@
+.groups {
+    h4 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .group {
+        padding: 20px 0;
+
+        &:not(:last-of-type) {
+            border-bottom: 3px solid $borderGrey;
+        }
+
+        p {
+            color: #656b6f;
+        }
+
+        .group-copy {
+            padding-right: $pad;
+        }
+
+        .group-links {
+            padding-left: $pad;
+        }
+
+        ul {
+            padding: 0;
+
+            a {
+                color: #498cca;
+                text-transform: none;
+            }
+
+            li {
+                margin: 0;
+                list-style: none;
+            }
+            
+        }
+
+        a {
+            color: $blue;
+            text-transform: uppercase;
+            font-family: $heading;
+            font-weight: 600;
+            font-size: 14px
+        }
+    }
+}
