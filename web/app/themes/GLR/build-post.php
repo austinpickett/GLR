@@ -4,16 +4,17 @@
  *
  * Build: post
  */
+
 ?>
 <article post_class() class="article" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <figure>
-        <img src="<?=assetDir?>/img/article-thumbnail.jpg" />
+        <img src="<?=get_the_post_thumbnail_url()?>" />
     </figure>
 
     <div class="excerpt">
-        <div class="meta">Matt Rainwaters | 08-16-2017</div>
-        <a href="<?=get_the_permalink()?>"><?php the_title()?></a>
+        <div class="meta"><?=get_the_author()?> | <?=get_the_date()?></div>
+        <a href="<?=get_the_permalink()?>"><?=the_title()?></a>
 
-        <div class="tag">Business</div>
+        <div class="tag"><?=get_the_category()[0]->cat_name?></div>
     </div>
 </article>

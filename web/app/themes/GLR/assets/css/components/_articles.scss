@@ -1,10 +1,16 @@
-.news a {
-    color: #498cca;
-    font-size: 15px;
-    font-family: $heading;
-    font-weight: 700;
-    letter-spacing: .2em;
-    text-transform: uppercase;
+.blog #content {
+    margin-top: 80px;
+}
+
+.news {
+    a {
+        color: #498cca;
+        font-size: 15px;
+        font-family: $heading;
+        font-weight: 700;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+    }
 }
 
 .articles {

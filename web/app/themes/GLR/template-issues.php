@@ -17,14 +17,9 @@ the_post();
 <div class="row wrapper">
 	<!-- Page -->
 	<div id="page" class="col s12" itemprop="MainContentOfPage">
-		<div class="center-align">
-			<img src="<?=assetDir?>/img/issue-topics.png" />
-			
-			<h1>Issue Topics</h1>
-			<p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+        <?=Template::partial('intro.php') ?>
 
-            <hr />
-            
+        <div class="center-align">
             <div class="issues">
                 <div class="issue">
                     <figure>

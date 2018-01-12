@@ -17,12 +17,9 @@ the_post();
 <div class="row wrapper">
 	<!-- Page -->
 	<div id="page" class="col s12" itemprop="MainContentOfPage">
-		<div class="center-align">
-			<img src="<?=assetDir?>/img/contact.png" />
-			
-			<h2>Contact Us</h2>
-			<p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+	    <?=Template::partial('intro.php') ?>
 
+		<div class="center-align">
 			<form class="wrapper skinny">
                 <div class="row">
                     <div class="col s12">

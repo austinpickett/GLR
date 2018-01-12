@@ -5,11 +5,12 @@
  * Master Header / Page Header
  */
 ?>
-
-<section id="masthead" role="banner">
+<?php if ($bgImage = CFS()->get('masthead_bg_image')): ?>
+<section id="masthead" role="banner" style="background-image: url(<?=$bgImage?>)">
     <div class="wrapper">
-        <p>Abuse and imbalance in Georgia’s civil justice<br />system.</p>
+        <p><?=CFS()->get('masthead_copy')?></p>
     </div>
 
     <div class="cover"></div>
 </section>
+<?php endif ?>

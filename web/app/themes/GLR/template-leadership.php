@@ -17,103 +17,32 @@ the_post();
 <div class="row wrapper">
 	<!-- Page -->
 	<div id="page" class="col s12" itemprop="MainContentOfPage">
-		<div class="center-align">
-			<img src="<?=assetDir?>/img/leaderships.png" />
-			
-			<h1>Leadership</h2>
-            <p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
-            <div class="two-col">
-                <p class="left-align">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem fugiat dolorum nemo quam vitae placeat exercitationem assumenda, ullam enim perferendis! Fugit, explicabo quaerat! Vel excepturi minima reiciendis eligendi illum consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, eveniet! At, earum accusantium. Earum perferendis labore dolore consequuntur accusamus facere, nulla veritatis officiis, dolor ipsa non repellat at quibusdam maiores?</p>
-            </div>
-
-            <hr />
-
+        <?=Template::partial('intro.php') ?>
+        <hr />
+        
+        <div class="center-align">
+            <?php if ($leaders = CFS()->get('leaders')): ?>
             <div class="leaders">
+                <?php foreach ($leaders AS $leader): ?>
                 <figure>
-                    <img src="http://via.placeholder.com/200x200" />
+                    <img src="<?=$leader['leader_image']?>" />
 
                     <figcaption>
-                        <h3>Kade Cullefer</h3>
-                        <strong>President</strong>
+                        <h3><?=$leader['leader_name']?></h3>
+                        <strong><?=$leader['leader_title']?></strong>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                        <p><?=$leader['leader_copy']?></p>
 
-                        <a href="javascript:;">
+                        <?php if ($email = $leader['leader_email']): ?>
+                        <a href="mailto:<?=$email?>">
                             <i class="icon-mail"></i>
                         </a>
+                        <?php endif ?>
                     </ficaption>
                 </figure>
-                <figure>
-                    <img src="http://via.placeholder.com/200x200" />
-
-                    <figcaption>
-                        <h3>Kade Cullefer</h3>
-                        <strong>President</strong>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-
-                        <a href="javascript:;">
-                            <i class="icon-mail"></i>
-                        </a>
-                    </ficaption>
-                </figure>
-                <figure>
-                    <img src="http://via.placeholder.com/200x200" />
-
-                    <figcaption>
-                        <h3>Kade Cullefer</h3>
-                        <strong>President</strong>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-
-                        <a href="javascript:;">
-                            <i class="icon-mail"></i>
-                        </a>
-                    </ficaption>
-                </figure>
-                <figure>
-                    <img src="http://via.placeholder.com/200x200" />
-
-                    <figcaption>
-                        <h3>Kade Cullefer</h3>
-                        <strong>President</strong>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-
-                        <a href="javascript:;">
-                            <i class="icon-mail"></i>
-                        </a>
-                    </ficaption>
-                </figure>
-                <figure>
-                    <img src="http://via.placeholder.com/200x200" />
-
-                    <figcaption>
-                        <h3>Kade Cullefer</h3>
-                        <strong>President</strong>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-
-                        <a href="javascript:;">
-                            <i class="icon-mail"></i>
-                        </a>
-                    </ficaption>
-                </figure>
-                <figure>
-                    <img src="http://via.placeholder.com/200x200" />
-
-                    <figcaption>
-                        <h3>Kade Cullefer</h3>
-                        <strong>President</strong>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-
-                        <a href="javascript:;">
-                            <i class="icon-mail"></i>
-                        </a>
-                    </ficaption>
-                </figure>
+                <?php endforeach ?>
             </div>
+            <?php endif ?>
 		</div>
 	</div>
 </div>

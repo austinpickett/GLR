@@ -46,7 +46,7 @@
 			<?=Backend::getMenu('header')?>
 		</ul>
 
-		<a href="#" class="btn">Donate</a>
+		<a href="/donate/" class="btn">Donate</a>
 	</div>
 
 	<!-- Mobile nav -->

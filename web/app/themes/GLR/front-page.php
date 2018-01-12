@@ -14,11 +14,9 @@ get_header();
 <!-- CONTENT -->
 <section id="content" role="main" itemprop="MainContentOfPage">
 <div class="wrapper">
+	<?=Template::partial('intro.php') ?>
+	
 	<div class="center-align">
-		<img src="<?=assetDir?>/img/strive.png" />
-
-		<h2>We Strive to Improve</h2>
-
 		<div class="issue-callouts flex-fluid">
 			<figure class="issue-callout">
 				<img src="<?=assetDir?>/img/legislative.png" />
@@ -74,58 +72,15 @@ get_header();
 			<h2>News + Events</h2>
 
 			<div class="articles">
-				<div class="article">
-					<figure>
-						<img src="<?=assetDir?>/img/article-thumbnail.jpg" />
-					</figure>
-
-					<div class="excerpt">
-						<div class="meta">Matt Rainwaters | 08-16-2017</div>
-						<a href="javascript:;">Support Georgians For Lawsuit Reform to help eliminate this type of abuse towards small</a>
-
-						<div class="tag">Business</div>
-					</div>
-				</div>
-
-				<div class="article">
-					<figure>
-						<img src="<?=assetDir?>/img/article-thumbnail.jpg" />
-					</figure>
-
-					<div class="excerpt">
-						<div class="meta">Matt Rainwaters | 08-16-2017</div>
-						<a href="javascript:;">Support Georgians For Lawsuit Reform to help eliminate this type of abuse towards small</a>
-
-						<div class="tag">Business</div>
-					</div>
-				</div>
-
-				<div class="article">
-					<figure>
-						<img src="<?=assetDir?>/img/article-thumbnail.jpg" />
-					</figure>
-
-					<div class="excerpt">
-						<div class="meta">Matt Rainwaters | 08-16-2017</div>
-						<a href="javascript:;">Support Georgians For Lawsuit Reform to help eliminate this type of abuse towards small</a>
-
-						<div class="tag">Business</div>
-					</div>
-				</div>
+			<?=Template::loop('post')?>
 			</div>
 
 			<a href="javascript:;">View All News + Events</a>
 		</div>
 	</div>
-
-	<div class="join-callout center-align">
-		<img src="<?=assetDir?>/img/scale.png" />
-
-		<h2>Join Georgians for Lawsuit Reform</h2>
-
-		<a href="javascript:;" class="btn light-blue">Join Now</a>
-	</div>
 </div>
+
+<?=Template::partial('join-callout.php')?>
 </section>
 
 <?php get_footer() ?>
