@@ -1,10 +1,10 @@
 /*!
  * NWSREACT Styles
  */
+@import 'classes';
 @import "https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800";
 @import "https://fonts.googleapis.com/css?family=PT+Serif:400,700";
-@import 'classes';
-
+@import "../vendor/ss-social-regular.css";
 // -----------------------------------------------
 
 // Dimensions
@@ -52,3 +52,5 @@ $red: #cf4935;
 @import 'components/_leaders';
 @import 'components/_issues';
 @import 'components/_filters';
+@import 'components/_resources';
+@import 'components/_policys';

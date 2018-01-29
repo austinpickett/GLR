@@ -51,3 +51,71 @@
 		}
 	}
 }
+
+.social-feed {
+	max-height: 400px;
+	overflow-y: scroll;
+	padding: 30px;
+	background: #EFEFEF;
+
+	.wrapper {
+		padding: 0
+	}
+
+	h4 {
+		color: $default;
+		font-size: 14px;
+		margin-top: 10px;
+		font-family: $heading;
+		text-transform: none;
+	}
+
+	.feed {
+		column-count: 4;
+		column-gap: 30px;
+
+		@media (max-width: $medium) {
+			column-count: 3;
+		}
+
+		@media (max-width: $small) {
+			column-count: 1;
+		}
+	}
+
+	.item {
+		break-inside: avoid-column;
+		page-break-inside: avoid;
+		background: #FFF;
+		padding: 25px;
+		margin-bottom: 25px;
+
+		img {
+			width: 100%
+		}
+
+		a:hover {
+			text-decoration: none
+		}
+	}
+
+	p {
+		font-size: 16px;
+		font-family: $heading;
+		font-weight: 700;
+		color: #20bdc0;
+		word-break: break-word;
+	}
+	.meta {
+		@include clearfix;
+
+		span {
+			font-size: 13px;
+			float: left;
+		}
+
+		i {
+			float: right;
+		}
+	}
+}

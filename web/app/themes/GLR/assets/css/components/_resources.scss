@@ -1,0 +1,29 @@
+.related-resources {
+    background: #f0f0f0;
+    padding: $pad;
+    margin-bottom: $pad;
+
+    ul {
+        margin: $pad 0 0 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+
+            a {
+                font-size: 14px;
+                font-weight: 600;
+                font-family: $heading;
+                color: $buttonBlue;
+                text-transform: capitalize
+            }
+        }
+    }
+
+    &.view-all a {
+        text-transform: uppercase;
+        font-weight: 700px;
+        font-size: 12px;
+        color: $buttonBlue;
+    }
+}

@@ -2,8 +2,8 @@
 /**
  * Theme Name: GLR
  * Version: 1.0
- * Author: Talasan Nicholson
- * Author URI: http://www.nwsco.org
+ * Author: Austin Pickett
+ * Author URI: http://www.austinkpickett.com
  */
 
 get_header();
@@ -35,17 +35,7 @@ get_header();
 	</div>
 </div>
 
-<form class="filters">
-<div class="wrapper">	
-	<select>
-		<option>Sort By All</option>
-	</select>
-	<select>
-		<option>Sort By All</option>
-	</select>
-	<input type="text" id="search" class="search" name="s" />
-</div>
-</form>
+<?php get_search_form() ?>
 </section>
 
 <?php get_footer() ?>

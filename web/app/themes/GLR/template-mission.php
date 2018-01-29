@@ -19,83 +19,59 @@ the_post();
 	<div id="page" class="col s12" itemprop="MainContentOfPage">
 		<div class="center-align">
             <div id="mission">
-                <img src="<?=assetDir?>/img/strive.png" />
+                <img src="<?=CFS()->get('mission_icon')?>" />
                 
-                <h2>Mission</h2>
-                <p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                <h2><?=CFS()->get('mission_title')?></h2>
+                <p class="skinny">
+                    <?=CFS()->get('mission_intro_text')?>
+                </p>
 
                 <div class="two-col">
-                    <p class="left-align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, nobis possimus? Accusantium temporibus non, ducimus itaque aspernatur maxime minima quis ea odio illo quibusdam impedit officiis cupiditate assumenda iure repellendus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, nobis possimus? Accusantium temporibus non, ducimus itaque aspernatur maxime minima quis ea odio illo quibusdam impedit officiis cupiditate assumenda iure repellendus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, nobis possimus? Accusantium temporibus non, ducimus itaque aspernatur maxime minima quis ea odio illo quibusdam impedit officiis cupiditate assumenda iure repellendus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, nobis possimus? Accusantium temporibus non, ducimus itaque aspernatur maxime minima quis ea odio illo quibusdam impedit officiis cupiditate assumenda iure repellendus? </p>
+                    <p class="left-align">
+                        <?=CFS()->get('mission_two_column_text')?>
+                    </p>
                 </div>
                 <hr />
             </div>
             
             <div id="partnerships">
-                <img src="<?=assetDir?>/img/partnerships.png" />
+                <img src="<?=CFS()->get('partnership_icon')?>" />
                 
-                <h2>Partnerships</h2>
-                <p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                <h2><?=CFS()->get('partnership_title')?></h2>
+                <p class="skinny">
+                    <?=CFS()->get('partnership_intro_text')?>
+                </p>
 
+                <?php if ($groups = CFS()->get('partnership_groups')): ?>
                 <div class="groups left-align">
+
+                    <?php foreach ($groups AS $group): ?>
                     <div class="group">
-                        <h4>Partnership group 1</h4>
+                        <h4><?=$group['group_title']?></h4>
 
                         <div class="row">
                             <div class="col s12 m6 group-copy">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, minus cumque ea non labore repellat harum, animi, tenetur delectus nemo fugiat quisquam! Corporis ipsum repudiandae iste ratione optio rerum voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam repudiandae aliquid?</p>
+                                <p>
+                                    <?=$group['group_description']?>
+                                </p>
                             </div>
                             
+                            <?php if ($links = $group['group_links']): ?>
                             <div class="col s12 m4 group-links">
                                 <ul>
-                                    <li><a href="javascript:;">Georgians Against Lawsuit Abuse</a></li>
-                                    <li><a href="javascript:;">Citizens Against Lawsuit Abuse</a></li>
-                                    <li><a href="javascript:;">Central GA People Who Hate Lawsuits Is a Longer Title</a></li>
-                                    <li><a href="javascript:;">City Councel Empowerment Group</a></li>
+                                    <?php foreach ($links AS $link): ?>
+                                    <li><a href="<?=$link['group_link_url']?>">
+                                        <?=$link['group_link_title']?>
+                                    </a></li>
+                                    <?php endforeach ?>
                                 </ul>
                             </div>
+                            <?php endif ?>
                         </div>
                     </div>
-                    <div class="group">
-                        <h4>Partnership group 2</h4>
-
-                        <div class="row">
-                            <div class="col s12 m6 group-copy">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, minus cumque ea non labore repellat harum, animi, tenetur delectus nemo fugiat quisquam! Corporis ipsum repudiandae iste ratione optio rerum voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam repudiandae aliquid?</p>
-                            </div>
-                            
-                            <div class="col s12 m4 group-links">
-                                <ul>
-                                    <li><a href="javascript:;">Georgians Against Lawsuit Abuse</a></li>
-                                    <li><a href="javascript:;">Citizens Against Lawsuit Abuse</a></li>
-                                    <li><a href="javascript:;">Central GA People Who Hate Lawsuits Is a Longer Title</a></li>
-                                    <li><a href="javascript:;">City Councel Empowerment Group</a></li>
-                                </ul>
-                                
-                                <a href="javscript:;">- View Less</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <h4>Partnership group 3</h4>
-
-                        <div class="row">
-                            <div class="col s12 m6 group-copy">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, minus cumque ea non labore repellat harum, animi, tenetur delectus nemo fugiat quisquam! Corporis ipsum repudiandae iste ratione optio rerum voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam repudiandae aliquid?</p>
-                            </div>
-                            
-                            <div class="col s12 m4 group-links">
-                                <ul>
-                                    <li><a href="javascript:;">Georgians Against Lawsuit Abuse</a></li>
-                                    <li><a href="javascript:;">Citizens Against Lawsuit Abuse</a></li>
-                                    <li><a href="javascript:;">Central GA People Who Hate Lawsuits Is a Longer Title</a></li>
-                                    <li><a href="javascript:;">City Councel Empowerment Group</a></li>
-                                </ul>
-
-                                <a href="javscript:;">+ View More</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
+                <?php endif ?>
             </div>
 		</div>
 	</div>

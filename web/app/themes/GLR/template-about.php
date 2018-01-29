@@ -7,6 +7,8 @@
 
 get_header();
 the_post();
+
+$groups = CFS()->get('sub_sections');
 ?>
 
 <!-- MASTHEAD -->
@@ -18,28 +20,20 @@ the_post();
 	<!-- Page -->
 	<div id="page" class="col s12" itemprop="MainContentOfPage">
 		<div class="center-align">
-			<img src="<?=assetDir?>/img/strive.png" />
+			<?php foreach ($groups AS $group): ?>
+			<img src="<?=$group['subsection_icon']?>" />
 			
-			<h2>Mission</h2>
-			<p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+			<h2><?=$group['subsection_title']?></h2>
+			<p class="skinny">
+				<?=$group['subsection_copy']?>
+			</p>
 
-			<a href="javascript:;" class="btn blue">Learn More</a>
+			<a href="<?=$group['section_link_url']?>" class="btn blue">
+				<?=$group['section_link_label']?>
+			</a>
 
 			<hr />
-			<img src="<?=assetDir?>/img/partnerships.png" />
-			
-			<h2>Partnerships</h2>
-			<p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
-
-			<a href="javascript:;" class="btn blue">Learn More</a>
-
-			<hr />
-			<img src="<?=assetDir?>/img/leaderships.png" />
-			
-			<h2>Leadership</h2>
-			<p class="skinny">Our Mission is the most important thing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
-
-			<a href="javascript:;" class="btn blue">Learn More</a>			
+			<?php endforeach ?>	
 		</div>
 	</div>
 </div>

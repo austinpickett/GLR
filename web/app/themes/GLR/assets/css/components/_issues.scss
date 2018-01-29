@@ -1,3 +1,38 @@
+.issue-intro, .issue-img {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.issue-intro {
+    padding: $pad !important;
+}
+
+.issue-img {
+    justify-content: center;
+    border-right: 3px solid $borderGrey;
+}
+
+.problem-copy {
+    margin-top: $pad;
+}
+
+.clr-position,
+.opp-position {
+    h4 {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        margin-right: $pad;
+    }
+}
+
+.reforms {
+    padding: $pad 0;
+}
+
 .issues {
     .issue {
         display: flex;

@@ -1,0 +1,27 @@
+.policys {
+    strong {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .1em;
+        color: #878b8c;
+    }
+
+    .download {
+        text-transform: uppercase;
+        color: $blue;
+        font-weight: 700;
+        font-size: 12px;
+        color: $buttonBlue;
+        letter-spacing: .2em;
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 15px;
+        }
+    }
+
+    @media (min-width: $small) {
+        padding-right: $pad;
+    }
+}

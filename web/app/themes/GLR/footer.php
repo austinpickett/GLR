@@ -22,6 +22,5 @@
 <?php wp_footer() ?>
 
 <script src="<?=assetDir?>/js/dist/main.js?v=<?=ASSET_VERSION?>"></script>
-
 </body>
 </html>

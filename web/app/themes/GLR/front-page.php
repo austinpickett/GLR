@@ -17,52 +17,20 @@ get_header();
 	<?=Template::partial('intro.php') ?>
 	
 	<div class="center-align">
+		<?php if ($callouts = CFS()->get('callout')): ?>
 		<div class="issue-callouts flex-fluid">
+			<?php foreach ($callouts AS $callout): ?>
 			<figure class="issue-callout">
-				<img src="<?=assetDir?>/img/legislative.png" />
+				<img src="<?=$callout['callout_image']?>" />
 				
 				<figcaption>
-					<h4>Legislative</h4>
-					<p>Scorecard bills & advocate civil justice issues</p>
+					<h4><?=$callout['callout_title']?></h4>
+					<p><?=$callout['callout_short_desc']?></p>
 				</figcaption>
 			</figure>
-
-			<figure class="issue-callout">
-				<img src="<?=assetDir?>/img/judicial.png" />
-				
-				<figcaption>
-					<h4>Judicial</h4>
-					<p>Scorecard bills & advocate civil justice issues</p>
-				</figcaption>
-			</figure>
-
-			<figure class="issue-callout">
-				<img src="<?=assetDir?>/img/bar.png" />
-				
-				<figcaption>
-					<h4>Bar</h4>
-					<p>Scorecard bills & advocate civil justice issues</p>
-				</figcaption>
-			</figure>
-
-			<figure class="issue-callout">
-				<img src="<?=assetDir?>/img/political.png" />
-				
-				<figcaption>
-					<h4>Political</h4>
-					<p>Scorecard bills & advocate civil justice issues</p>
-				</figcaption>
-			</figure>
-
-			<figure class="issue-callout">
-				<img src="<?=assetDir?>/img/public-relations.png" />
-				
-				<figcaption>
-					<h4>Public Relations</h4>
-					<p>Scorecard bills & advocate civil justice issues</p>
-				</figcaption>
-			</figure>
+			<?php endforeach ?>
 		</div>
+		<?php endif ?>
 	</div>
 
 	<div class="news">
@@ -72,15 +40,28 @@ get_header();
 			<h2>News + Events</h2>
 
 			<div class="articles">
-			<?=Template::loop('post')?>
+				<?=Template::loop('post', [])?>
 			</div>
 
-			<a href="javascript:;">View All News + Events</a>
+			<a href="/news/" class="view-all">View All News + Events</a>
 		</div>
 	</div>
 </div>
 
 <?=Template::partial('join-callout.php')?>
 </section>
+
+<div class="social-feed">
+	<div class="wrapper">
+		<div class="feed">
+			<?php
+			Template::loop('social', [
+				'post_type' => 'social',
+				'posts_per_page' => 8,
+			]);
+			?>
+		</div>
+	</div>
+</div>
 
 <?php get_footer() ?>

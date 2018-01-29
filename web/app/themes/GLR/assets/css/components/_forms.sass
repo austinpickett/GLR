@@ -56,7 +56,7 @@ form
 
 		&:hover, &:focus, &:active
 			outline: none
-			border-bottom-color: #000
+			border-bottom: 1px solid #b4b4b4
 			+boxShadow(none)
 
 		+colourPlaceholder
@@ -111,6 +111,12 @@ form
 	.validation_message
 		color: red
 		padding-top: 10px
+
+	li.gfield
+		padding: 0 !important
+
+	.gfield, .gfield input
+		width: 100% !important
 
 	.gform_description,
 	.gform_confirmation_message

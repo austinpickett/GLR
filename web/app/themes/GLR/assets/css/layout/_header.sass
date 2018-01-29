@@ -39,7 +39,7 @@
 	@media (min-width: $small)
 		.current_page_item, .current_page_parent 
 			a
-				color: #498cca
+				color: $buttonBlue
 				
 				&::after
 					visibility: visible
@@ -63,10 +63,14 @@
 	> .row.wrapper
 		display: flex
 		align-items: center
+		padding: 0
 
-	.main-nav
+		@media (max-width: $small)
+			padding: 0 $pad
+
+	.main-nav 
 		margin-left: auto
-
+		
 		> ul
 			margin-right: $pad
 			line-height: 70px
@@ -107,3 +111,57 @@
 
 		&:after
 			content: none
+
+#header ul.social-nav
+	margin-right: $pad
+
+	li
+		color: $buttonBlue
+		margin-right: 5px
+
+		a
+			text-indent: -9999em
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			margin: 0
+
+			&:after 
+				content: none
+
+body.post-type-archive,
+body.single
+	&-issue #header
+		.current_page_item, .current_page_parent
+			a
+				color: $blue
+
+				&:after
+					visibility: hidden
+
+		li.issues a
+			color: $buttonBlue
+			
+			&::after
+				visibility: visible
+				+opacity(1)
+				+transform(translateY(-20px))
+
+	&-resource #header
+		.current_page_item, .current_page_parent
+			a
+				color: $blue
+
+				&:not(:hover):after
+					+opacity(0)
+					+transform(translateY(-30px))
+
+		li.resources a
+			color: $buttonBlue
+			
+			&::after
+				visibility: visible
+				+opacity(1)
+				+transform(translateY(-20px))

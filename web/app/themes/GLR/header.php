@@ -4,6 +4,7 @@
  *
  * Header
  */
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -31,6 +32,7 @@
 
 	<script src="//<?=$_SERVER['SERVER_NAME']?>:9091/livereload.js"></script>
 	<?php wp_head() ?>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body <?php body_class() ?>>
 
@@ -46,6 +48,10 @@
 			<?=Backend::getMenu('header')?>
 		</ul>
 
+		<ul class="social-nav hide-for-small">
+			<?=Backend::getMenu('social')?>
+		</ul>
+
 		<a href="/donate/" class="btn">Donate</a>
 	</div>
 
@@ -56,8 +62,10 @@
 		<div id="mobile-menu" class="center-align">
 		<ul class="main-mobile-nav">
 			<li>
-		<a href="/"><img src="<?=assetDir?>/img/logo-stacked.png" /></a></li>
+				<a href="/"><img src="<?=assetDir?>/img/logo-stacked.png" /></a>
+			</li>
 			<?=BackEnd::getMenu('header')?>
+			<li><a href="/donate/" class="btn">Donate</a></li>
 		</ul>
 		</div>
 	</div>

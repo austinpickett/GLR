@@ -20,44 +20,7 @@ the_post();
 	    <?=Template::partial('intro.php') ?>
 
 		<div class="center-align">
-			<form class="wrapper skinny">
-                <div class="row">
-                    <div class="col s12">
-                        <input type="text" placeholder="First Name" />
-                    </div>
-
-                    <div class="col s12">
-                        <input type="text" placeholder="Last Name" />
-                    </div>
-                    
-                    <div class="col s12">
-                        <input type="email" placeholder="Email Address" />
-                    </div>
-
-                    <div class="col s8">
-                        <input type="text" placeholder="Credit Card Number" />
-                    </div>
-                    <div class="col s4">
-                        <input type="text" placeholder="CCV" />
-                    </div>
-
-                    <div class="col s6">
-                        <input type="text" placeholder="MM/YY" />
-                    </div>
-                    <div class="col s6">
-                        <input type="text" placeholder="Zip Code" />
-                    </div>
-
-                    <div class="col s12">
-                        <input type="text" placeholder="$ Donation Amount" />
-                    </div>
-                </div>
-
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta, animi placeat temporibus ducimus molestias corrupti explicabo odio est reprehenderit id magni quo eligendi eos cum officiis ex non labore!</p>
-
-                <button type="submit" class="btn blue">Submit</button>
-            </form>
+            <?php the_content() ?>
 		</div>
 	</div>
 </div>
