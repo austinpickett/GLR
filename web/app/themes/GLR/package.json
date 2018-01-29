@@ -28,6 +28,7 @@
     "babelify": "^7",
     "dotenv": "^4.0.0",
     "es6-promise": "^4",
+    "form-serialize": "^0.7.2",
     "lodash": "^4",
     "node-pre-gyp": "^0.6.36",
     "node-sass": "^4",
@@ -36,7 +37,8 @@
     "raf": "^3.3.2",
     "react": "^15",
     "react-dom": "^15.5.4",
-    "rx": "^4.1.0"
+    "rx": "^4.1.0",
+    "styled-components": "^3.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6",

@@ -14,7 +14,7 @@ $the_query = new WP_Query(array(
 <!-- CONTENT -->
 <section id="content" role="main">
 <div class="the-posts row wrapper news search">
-<h2>Search results for: <em><?=get_query_var('s') ?></h2>
+<h2>Search results for: <em><?=get_query_var('s') ?></em></h2>
 
 
 <div class="articles">
