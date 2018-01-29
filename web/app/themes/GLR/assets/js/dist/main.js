@@ -69,6 +69,55 @@ new Header(document.getElementById('header'));
 },{}],2:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Lightbox = exports.Lightbox = function () {
+	function Lightbox($lightbox) {
+		_classCallCheck(this, Lightbox);
+
+		this.$lightbox = $lightbox;
+		this.$lightbox.querySelector('.close').addEventListener('click', this.close.bind(this));
+		this.open();
+
+		window.onkeydown = function (evt) {
+			evt = evt || window.event;
+			if (evt.keyCode == 27) lightbox.classList.remove('open');
+		};
+	}
+
+	_createClass(Lightbox, [{
+		key: 'open',
+		value: function open() {
+			this.$lightbox.classList.add('open');
+		}
+	}, {
+		key: 'close',
+		value: function close() {
+			this.$lightbox.classList.remove('open');
+		}
+	}]);
+
+	return Lightbox;
+}();
+
+var $joinUs = void 0;
+if ($joinUs = document.querySelector('.join-us-modal-link')) {
+	$joinUs.addEventListener('click', function (e) {
+		e.preventDefault();
+		var $lightbox = void 0;
+		if ($lightbox = document.getElementById('join-us-lightbox')) new Lightbox($lightbox);
+	});
+}
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
 var _Header = require('./components/Header');
 
 var _Header2 = _interopRequireDefault(_Header);
@@ -77,28 +126,17 @@ var _AnimateOut = require('./modules/AnimateOut');
 
 var _AnimateOut2 = _interopRequireDefault(_AnimateOut);
 
+var _Lightbox = require('./components/Lightbox');
+
+var _Lightbox2 = _interopRequireDefault(_Lightbox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Array.from(document.querySelectorAll('[href]')).forEach(el => {
-// 	const href = el.getAttribute('href')
-
-// 	if (
-// 		href.match(location.origin)
-// 		&& !/#/.test(href)
-// 		&& !/contact/.test(href)
-// 	) {
-// 		el.addEventListener('click', (e) => {
-// 			e.preventDefault()
-// 			return AnimateOut(href)
-// 		})
-// 	}
-// })
 
 window.onload = function () {
   return document.body.classList.add('loaded');
 };
 
-},{"./components/Header":1,"./modules/AnimateOut":3}],3:[function(require,module,exports){
+},{"./components/Header":1,"./components/Lightbox":2,"./modules/AnimateOut":4}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123,4 +161,4 @@ window.onpageshow = function (e) {
 	return e.persisted ? window.location.reload() : null;
 };
 
-},{}]},{},[2]);
+},{}]},{},[3]);

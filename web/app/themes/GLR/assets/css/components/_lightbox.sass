@@ -1,0 +1,40 @@
+.lightbox
+	z-index: 1000
+	+cover(fixed)
+	+transition(opacity .3s ease-out)
+	background: rgba(0,0,0, .5)
+
+	&:not(.open)
+		pointer-events: none
+		+opacity(0)
+
+		.lightbox-content
+			+transform(translate(-50%, -250px))
+
+			@media (max-width: $small)
+				+transform(translateY(100%))
+
+		.no-csspointerevents &
+			display: none
+
+	.close
+		z-index: 10
+		position: absolute
+		top: 0
+		right: 0
+		color: #FFF
+		padding: 0 25px 10px
+		background: $blue
+		font-size: 32px
+		font-weight: 700
+
+		&:hover
+			text-decoration: none
+
+	.lightbox-content
+		background: #FFF
+		padding: 45px
+		+transition(transform .7s ease-out)
+
+		h2
+			color: $blue

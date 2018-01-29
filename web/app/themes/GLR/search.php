@@ -6,9 +6,9 @@
  */
 
 get_header();
-$s = get_search_query();
-$args = array('s' => $s);
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query(array(
+    's' => get_search_query()
+));
 ?>
 
 <!-- CONTENT -->

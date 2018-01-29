@@ -18,6 +18,13 @@
     </div>
 </footer>
 
+<div id="join-us-lightbox" class="lightbox">
+	<div class="lightbox-content center">
+        <?php gravity_form(3); ?>
+		<a href="javascript:;" class="close">x</a>
+	</div>
+</div>
+
 <?=BackEnd::getOption('extra-scripts')?>
 <?php wp_footer() ?>
 
