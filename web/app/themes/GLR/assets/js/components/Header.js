@@ -17,6 +17,13 @@ export class Header {
 		if ($mobileLink = this.$header.querySelector('.mobile-link > a')) {
 			$mobileLink.addEventListener('click', this.handleMobileClick.bind(this), true)
 		}
+
+		let $mobileNavLinks
+		if ($mobileNavLinks = this.$header.querySelectorAll('.main-mobile-nav li.menu-item')) {
+			for (var $link of $mobileNavLinks) {
+				console.log($link)
+			}
+		}
 	}
 
 	toggleIf(c, cond) {

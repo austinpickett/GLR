@@ -13,4 +13,6 @@
 
     <div class="cover"></div>
 </section>
+<?php else: ?>
+<div class="push"></div>
 <?php endif ?>

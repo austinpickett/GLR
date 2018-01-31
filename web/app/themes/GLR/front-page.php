@@ -21,12 +21,14 @@ get_header();
 		<div class="issue-callouts flex-fluid">
 			<?php foreach ($callouts AS $callout): ?>
 			<figure class="issue-callout">
+				<a href="<?=$callout['callout_url']?>">
 				<img src="<?=$callout['callout_image']?>" />
 				
 				<figcaption>
 					<h4><?=$callout['callout_title']?></h4>
 					<p><?=$callout['callout_short_desc']?></p>
 				</figcaption>
+				</a>
 			</figure>
 			<?php endforeach ?>
 		</div>

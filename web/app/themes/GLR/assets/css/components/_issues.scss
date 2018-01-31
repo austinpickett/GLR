@@ -33,6 +33,10 @@
     padding: $pad 0;
 }
 
+.issue-callouts a:hover {
+    text-decoration: none;
+}
+
 .issues {
     .issue {
         display: flex;

@@ -19,4 +19,14 @@
             font-family: $heading;
         }
     }
+
+    .mail-icon {
+        display: inline-block;
+        height: 22px;
+        width: 32px;
+    }
+
+    figcaption {
+        margin-top: 30px;
+    }
 }

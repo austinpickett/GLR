@@ -30,6 +30,34 @@ var Header = exports.Header = function () {
 		if ($mobileLink = this.$header.querySelector('.mobile-link > a')) {
 			$mobileLink.addEventListener('click', this.handleMobileClick.bind(this), true);
 		}
+
+		var $mobileNavLinks = void 0;
+		if ($mobileNavLinks = this.$header.querySelectorAll('.main-mobile-nav li.menu-item')) {
+			var _iteratorNormalCompletion = true;
+			var _didIteratorError = false;
+			var _iteratorError = undefined;
+
+			try {
+				for (var _iterator = $mobileNavLinks[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+					var $link = _step.value;
+
+					console.log($link);
+				}
+			} catch (err) {
+				_didIteratorError = true;
+				_iteratorError = err;
+			} finally {
+				try {
+					if (!_iteratorNormalCompletion && _iterator.return) {
+						_iterator.return();
+					}
+				} finally {
+					if (_didIteratorError) {
+						throw _iteratorError;
+					}
+				}
+			}
+		}
 	}
 
 	_createClass(Header, [{
@@ -249,80 +277,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+exports.default = function (_ref) {
+    var _ref$data = _ref.data,
+        date = _ref$data.date,
+        link = _ref$data.link,
+        title = _ref$data.title,
+        _embedded = _ref$data._embedded;
+    return React.createElement(
+        "article",
+        {
+            className: "article",
+            role: "article",
+            itemScope: true,
+            itemType: "http://schema.org/BlogPosting"
+        },
+        React.createElement(
+            "figure",
+            null,
+            React.createElement("img", { src: _embedded['wp:featuredmedia'][0].source_url })
+        ),
+        React.createElement(
+            "div",
+            { className: "excerpt" },
+            React.createElement(
+                "div",
+                { className: "meta" },
+                _embedded.author[0].name,
+                " | ",
+                date
+            ),
+            React.createElement(
+                "a",
+                { href: link },
+                title.rendered
+            ),
+            React.createElement(
+                "div",
+                { className: "tag" },
+                _embedded['wp:term'][0][0].name
+            )
+        )
+    );
+};
 
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Post = function (_PureComponent) {
-    _inherits(Post, _PureComponent);
-
-    function Post(props) {
-        _classCallCheck(this, Post);
-
-        return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).call(this, props));
-    }
-
-    _createClass(Post, [{
-        key: "render",
-        value: function render() {
-            console.log(this.props.data._embedded);
-
-            return _react2.default.createElement(
-                "article",
-                {
-                    className: "article",
-                    role: "article",
-                    itemScope: true,
-                    itemType: "http://schema.org/BlogPosting"
-                },
-                _react2.default.createElement(
-                    "figure",
-                    null,
-                    _react2.default.createElement("img", { src: this.props.data._embedded['wp:featuredmedia'][0].source_url })
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "excerpt" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "meta" },
-                        this.props.data._embedded.author[0].name,
-                        " | ",
-                        this.props.data.date
-                    ),
-                    _react2.default.createElement(
-                        "a",
-                        { href: this.props.data.link },
-                        this.props.data.title.rendered
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "tag" },
-                        this.props.data._embedded['wp:term'][0][0].name
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Post;
-}(_react.PureComponent);
-
-exports.default = Post;
-
-},{"react":197}],6:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

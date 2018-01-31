@@ -35,7 +35,7 @@ the_post();
 
                         <?php if ($email = $leader['leader_email']): ?>
                         <a href="mailto:<?=$email?>">
-                            <i class="icon-mail"></i>
+                            <?=FrontEnd::svg('mail-icon')?>
                         </a>
                         <?php endif ?>
                     </ficaption>
