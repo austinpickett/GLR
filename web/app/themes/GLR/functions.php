@@ -94,11 +94,7 @@ add_action('wp_enqueue_scripts', function() {
 
 	wp_deregister_script('wp-embed.min.js');
 	wp_deregister_script('wp-embed');
-	wp_deregister_script('jquery-migrate');
 	wp_deregister_script('embed');
-	wp_deregister_script('jquery');
-	wp_deregister_script('jquery-easing');
-
 	wp_dequeue_style('page-list-style');
 	wp_dequeue_style('yoast-seo-adminbar');
 }, 999);
@@ -112,6 +108,11 @@ add_filter('upload_mimes', function($mimes) {
 
 	return $mimes;
 });
+
+add_filter('gform_submit_button', 'form_submit_button', 10, 2);
+function form_submit_button($button, $form) {
+    return "<button type'submit' class='btn blue button' id='gform_submit_button_{$form['id']}'><span>Submit</span></button>";
+}
 
 // -----------------------------------------------
 

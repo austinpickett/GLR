@@ -23,8 +23,8 @@ form
 		> .gfield_label
 			pointer-events: none
 			position: absolute
-			top: 14px
-			left: 0
+			top: 20px
+			left: 10px
 			color: #B6B6B6
 			font-weight: 300
 			font-size: 24px
@@ -35,9 +35,6 @@ form
 				font-size: 16px
 				top: -15px
 
-		@media (min-width: $small)
-			&:nth-child(2n) > .gfield_label
-				left: 20px
 
 	+inputs
 		display: block
@@ -97,13 +94,16 @@ form
 	textarea
 		max-height: 125px
 		resize: none
-		margin: 20px auto 0
 
 	p
 		text-align: inherit
 
 .gform_wrapper
 	+clearfix
+
+	[type="radio"]:checked+label:after
+		border-color: $blue
+		background-color: $blue
 
 	.validation_error
 		margin: 0 0 50px
@@ -139,7 +139,7 @@ form
 
 	ul li
 		text-align: left
-		margin: 0 0 35px
+		margin: 0 0 $pad
 		padding: 0
 
 		@media (min-width: 767px)
@@ -165,8 +165,26 @@ form
 			pointer-events: none
 			cursor: not-allowed
 
+	label
+		font-family: $heading !important
+
 	.gform_footer
 		clear: both
-		text-align: left
+		text-align: center
 		margin: 0
 		padding: 0
+
+		button
+			padding: 10px $pad*2
+
+#field_2_5
+	width: 66% !important
+	padding-right: $pad !important
+
+#field_2_7
+	width: 33% !important
+	clear: none
+
+#label_1_6_0
+	padding-top: 3px
+	padding-left: 30px !important
