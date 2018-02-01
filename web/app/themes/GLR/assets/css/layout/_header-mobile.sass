@@ -55,7 +55,7 @@
 // -----------------------------------------------
 
 #header #mobile-menu
-	z-index: 520
+	z-index: -1
 	+cover(fixed)
 	overflow: scroll
 	overflow-x: hidden
@@ -64,7 +64,13 @@
 
 	> ul[class], ul.sub-menu
 		display: block
-		padding: 40px
+		padding: 10px 40px
+
+	ul.cta-nav .btn
+		display: inline-block
+		padding: 10px 40px
+		font-size: 16px
+		color: white
 
 	ul
 		display: block

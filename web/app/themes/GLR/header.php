@@ -59,14 +59,18 @@
 	<div class="hide-on-med-and-up mobile-link">
 		<a href="javascript:;"><span></span></a>
 
-		<div id="mobile-menu" class="center-align">
-		<ul class="main-mobile-nav">
-			<li>
-				<a href="/"><img src="<?=assetDir?>/img/logo-stacked.png" /></a>
-			</li>
-			<?=BackEnd::getMenu('header')?>
-			<li><a href="/donate/" class="btn">Donate</a></li>
-		</ul>
+		<div id="mobile-menu">
+			<ul class="main-mobile-nav">
+				<?=BackEnd::getMenu('header')?>
+			</ul>
+
+			<ul class="social-nav">
+				<?=Backend::getMenu('social')?>
+			</ul>
+
+			<ul class="cta-nav">
+				<li><a href="/donate/" class="btn">Donate</a></li>
+			</ul>
 		</div>
 	</div>
 </div>

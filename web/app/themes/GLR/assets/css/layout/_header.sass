@@ -80,6 +80,17 @@
 		transition-delay: .25s
 		-webkit-transition-delay: .25s
 
+@media (max-width: $small)
+	.logo
+		overflow: hidden
+
+		img
+			+transition(.4s ease) 
+
+		body.lock & img
+			+transform(translateX(-60px))
+		
+
 #header ul.sub-menu
 	position: absolute
 	left: -999em
