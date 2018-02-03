@@ -89,20 +89,38 @@
 			&:after
 				content: none
 
+	.menu-item-has-children a
+		position: relative
+
+		&:after
+			content: ''
+			display: block
+			width: 32px
+			height: 19px
+			background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAMAAADGSv/FAAAAY1BMVEVJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMpJjMrbVcPHAAAAIHRSTlMAAUtNTk9QUVJTVVZXWFlaW2BhYmPg4uXm5+rs+fz9/vtYKBMAAAB+SURBVHgBfcpZEoIwEADRdhFUAu6LaCT3P6U1VE0+4kz6tx/t877CKTxeS8aUPlv7H2JKNwG2kC8gRBGt82MDJ1sM89+Disb9cC6F/g4c0eev4iti4/xC6A/wL9YAwfpwUeH8LLr592CISYR+V+iviDjgdp3qH47vcUe1BUU/2q4UxlRQnw0AAAAASUVORK5CYII=)
+			position: absolute
+			right: 0
+			top: 50%
+			+transform(translateY(50%))
+			margin-top: -19px
+			visibility: visible
+			opacity: 1
+
 	ul.main-mobile-nav
 		padding-top: 75px
 		background: #FFF
+
+		li
+			position: relative
+			display: block
 
 		li:not(:last-child) > a
 			border-bottom: 1px solid rgba($blue,.3)
 
 		> li > ul.sub-menu
 			z-index: 1
-			+cover
-			overflow-y: scroll
-			padding-top: 75px
+			position: relative
 			+transition(.35s $easeInOutQuint)
-			background: $default
 
 			li > a
 				font-size: 24px
@@ -124,9 +142,15 @@
 					padding: 9px 0
 					border: 0
 
-		> li:not(.over) > ul.sub-menu
-			+opacity(0)
-			+transform(translate(100%, 0))
+		> li.over a:after
+			+transform(rotate(180deg))
+
+		> li:not(.over) 
+			height: 70px
+			
+			> ul.sub-menu
+				+opacity(0)
+				+transform(translate(100%, 0))
 
 #header:not(.mobile-menu-open) #mobile-menu
 	+opacity(0)

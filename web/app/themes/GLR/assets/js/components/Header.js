@@ -19,11 +19,14 @@ export class Header {
 		}
 
 		let $mobileNavLinks
-		if ($mobileNavLinks = this.$header.querySelectorAll('.main-mobile-nav li.menu-item')) {
-			for (var $link of $mobileNavLinks) {
-				console.log($link)
-			}
+		if ($mobileNavLinks = this.$header.querySelectorAll('.main-mobile-nav li.menu-item-has-children')) {
+			Array.from($mobileNavLinks).forEach(x => x.querySelector('a').addEventListener('click', this.handleMobileSubanv.bind(this), true))
 		}
+	}
+
+	handleMobileSubanv(e) {
+		e.preventDefault()
+		e.target.offsetParent.classList.toggle('over')
 	}
 
 	toggleIf(c, cond) {

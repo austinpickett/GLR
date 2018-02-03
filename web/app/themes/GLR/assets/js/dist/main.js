@@ -13,6 +13,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Header = exports.Header = function () {
 	function Header($header) {
+		var _this = this;
+
 		_classCallCheck(this, Header);
 
 		this.$header = $header;
@@ -32,35 +34,20 @@ var Header = exports.Header = function () {
 		}
 
 		var $mobileNavLinks = void 0;
-		if ($mobileNavLinks = this.$header.querySelectorAll('.main-mobile-nav li.menu-item')) {
-			var _iteratorNormalCompletion = true;
-			var _didIteratorError = false;
-			var _iteratorError = undefined;
-
-			try {
-				for (var _iterator = $mobileNavLinks[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-					var $link = _step.value;
-
-					console.log($link);
-				}
-			} catch (err) {
-				_didIteratorError = true;
-				_iteratorError = err;
-			} finally {
-				try {
-					if (!_iteratorNormalCompletion && _iterator.return) {
-						_iterator.return();
-					}
-				} finally {
-					if (_didIteratorError) {
-						throw _iteratorError;
-					}
-				}
-			}
+		if ($mobileNavLinks = this.$header.querySelectorAll('.main-mobile-nav li.menu-item-has-children')) {
+			Array.from($mobileNavLinks).forEach(function (x) {
+				return x.querySelector('a').addEventListener('click', _this.handleMobileSubanv.bind(_this), true);
+			});
 		}
 	}
 
 	_createClass(Header, [{
+		key: 'handleMobileSubanv',
+		value: function handleMobileSubanv(e) {
+			e.preventDefault();
+			e.target.offsetParent.classList.toggle('over');
+		}
+	}, {
 		key: 'toggleIf',
 		value: function toggleIf(c, cond) {
 			var classList = this.$header.classList;

@@ -1,7 +1,8 @@
 #footer {
 	padding: 25px 40px;
 
-	img {
+	.logo-stacked {
+		width: 186px;
 		align-self: center;
 	}
 
@@ -21,7 +22,9 @@
 		}
 
 		.copy {
-			width: 45%;
+			width: 60%;
+			font-size: 20px;
+			line-height: 1.6;
 		}
 
 		.copyright {
@@ -62,6 +65,17 @@
 	padding: 30px;
 	background: #EFEFEF;
 
+	.social-footer {
+		display: flex;
+		align-items: center;
+		
+		i {
+			margin-left: auto;
+			margin-top: 10px;
+			color: #cf4935;
+		}
+	}
+
 	.wrapper {
 		padding: 0
 	}
@@ -71,6 +85,7 @@
 		font-size: 14px;
 		margin-top: 10px;
 		font-family: $heading;
+		color: $buttonBlue;
 		text-transform: none;
 	}
 
@@ -104,10 +119,9 @@
 	}
 
 	p {
-		font-size: 16px;
+		font-size: 15px;
 		font-family: $heading;
-		font-weight: 700;
-		color: #20bdc0;
+		line-height: 1.7;
 		word-break: break-word;
 	}
 	.meta {

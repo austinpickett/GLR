@@ -18,6 +18,10 @@
             font-weight: 600;
             font-family: $heading;
         }
+
+        @media (max-width: $small) {
+            width: 100%
+        }
     }
 
     .mail-icon {

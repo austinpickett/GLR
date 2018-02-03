@@ -116,55 +116,55 @@ function form_submit_button($button, $form) {
 
 // -----------------------------------------------
 
-// if (!wp_next_scheduled('cronFacebook'))
-//     wp_schedule_event(time(), 'hourly', 'cronFacebook');
+if (!wp_next_scheduled('cronFacebook'))
+    wp_schedule_event(time(), 'hourly', 'cronFacebook');
 
-// add_action('cronFacebook', 'importFacebook');
-// function importFacebook() {
-// 	require_once 'classes/external/Facebook/autoload.php';
+add_action('cronFacebook', 'importFacebook');
+function importFacebook() {
+	require_once 'classes/external/Facebook/autoload.php';
 
-//     $pageId = '367869995953';
-//     $appId = '296347484145186';
-//     $secret = '6e8b903f1c5a0a524c47e31624a93a8d';
+    $pageId = '1651938015128584';
+    $appId = '1730113577050714';
+    $secret = '13b1ea3e9b6a819ad4f981016919b848';
 
-//     # Facebook
-//     $fb = new \Facebook\Facebook(array(
-//         'app_id' => $appId,
-//         'app_secret' => $secret,
-//         'default_graph_version' => 'v2.9',
-//         'default_access_token' => $appId .'|'. $secret,
-//     ));
+    # Facebook
+    $fb = new \Facebook\Facebook(array(
+        'app_id' => $appId,
+        'app_secret' => $secret,
+        'default_graph_version' => 'v2.9',
+        'default_access_token' => $appId .'|'. $secret,
+    ));
 
-//     try {
-//         $feeds = $fb->get($pageId . '/feed?fields=name,picture,link,message,created_time')->getGraphEdge();
-//         foreach ($feeds AS $post):
-//             $cfsArgs = array(
-//                 'social_url' => @$post->getField('link'),
-//                 'social_photo' => @$post->getField('picture'),
-//                 'social_source' => 'facebook',
-//             );
+    try {
+        $feeds = $fb->get($pageId . '/feed?fields=name,picture,link,message,created_time')->getGraphEdge();
+        foreach ($feeds AS $post):
+            $cfsArgs = array(
+                'social_url' => @$post->getField('link'),
+                'social_photo' => @$post->getField('picture'),
+                'social_source' => 'facebook',
+            );
 
-//             $baseArgs = array(
-//                 'post_type' => 'social',
-//                 'post_status' => 'publish',
-//                 'post_title' => $post->getField('name'),
-//                 'post_content' => $post->getField('message'),
-//                 'post_date' => $post->getField('created_time')->format('Y-m-d H:i:s'),
-//             );
+            $baseArgs = array(
+                'post_type' => 'social',
+                'post_status' => 'publish',
+                'post_title' => $post->getField('name'),
+                'post_content' => $post->getField('message'),
+                'post_date' => $post->getField('created_time')->format('Y-m-d H:i:s'),
+            );
 
-//             // Attempt to get the ID if the post exists and just update it.
-//             if ($curID = get_page_by_title($baseArgs['post_title'], OBJECT, 'social'))
-//                 $baseArgs['ID'] = $curID->ID;
+            // Attempt to get the ID if the post exists and just update it.
+            if ($curID = get_page_by_title($baseArgs['post_title'], OBJECT, 'social'))
+                $baseArgs['ID'] = $curID->ID;
 
-//             // Execute the $CFS save call
-//             if ($baseArgs['post_title'] !== null)
-//                 CFS()->save($cfsArgs, $baseArgs);
-//         endforeach;
-//     } catch(FacebookRequestException $ex) {
-//         echo $ex->getMessage();
-//         exit;
-//     }
-// }
+            // Execute the $CFS save call
+            if ($baseArgs['post_title'] !== null)
+                CFS()->save($cfsArgs, $baseArgs);
+        endforeach;
+    } catch(FacebookRequestException $ex) {
+        echo $ex->getMessage();
+        exit;
+    }
+}
 
 // -----------------------------------------------
 

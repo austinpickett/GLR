@@ -8,7 +8,7 @@
 
 <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
     <div class="wrapper">
-        <img src="<?=assetDir?>/img/logo-stacked.png" />
+        <?=FrontEnd::svg('logo-stacked')?>
 
         <div>
             <p class="copy">Georgians for Lawsuit Reform is an organization focused on ensuring a fair, balanced and efficient civil justice system for all citizens.</p>
