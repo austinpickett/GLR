@@ -6,8 +6,16 @@
         width: 33%;
         padding: $pad;
 
-        img {
-            @include borderRadius(100%)
+        .leader-image {
+            @include borderRadius(100%);
+            @include sq(200px);
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+
+            img {
+                @extend .cover;
+            }
         }
 
         strong {

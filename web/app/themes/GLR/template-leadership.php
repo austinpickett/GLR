@@ -25,7 +25,9 @@ the_post();
             <div class="leaders">
                 <?php foreach ($leaders AS $leader): ?>
                 <figure>
-                    <img src="<?=$leader['leader_image']?>" />
+                    <div class="leader-image">
+                        <img src="<?=$leader['leader_image']?>" />
+                    </div>
 
                     <figcaption>
                         <h3><?=$leader['leader_name']?></h3>
