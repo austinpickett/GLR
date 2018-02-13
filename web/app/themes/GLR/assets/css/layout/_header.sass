@@ -75,10 +75,10 @@
 			margin-right: $pad
 			line-height: 70px
 	
-	.menu-item-has-children a:hover + .sub-menu
-		left: 0
-		transition-delay: .25s
-		-webkit-transition-delay: .25s
+.main-nav .menu-item-has-children a:hover + .sub-menu
+	left: 0
+	transition-delay: .25s
+	-webkit-transition-delay: .25s
 
 @media (max-width: $small)
 	.logo
@@ -91,7 +91,7 @@
 			+transform(translateX(-60px))
 		
 
-#header ul.sub-menu
+#header .main-nav ul.sub-menu
 	position: absolute
 	left: -999em
 	top: 0
