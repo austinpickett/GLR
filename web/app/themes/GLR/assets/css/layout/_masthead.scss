@@ -10,6 +10,10 @@
     font-weight: 700;
     position: relative;
 
+    body.loaded & p {
+        animation: slideFromTop 1s ease forwards
+    }
+
     .cover {
         z-index: 1
     }
@@ -22,6 +26,7 @@
         font-size: 65px;
         font-family: $heading;
         line-height: 1.2;
+        visibility: hidden;
     }
             
     @media (max-width: $medium) {

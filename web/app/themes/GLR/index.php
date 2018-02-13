@@ -9,7 +9,9 @@
 get_header();
 $query = new WP_Query(array(
 	'posts_per_page' => 1,
-))
+));
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!-- MASTHEAD -->

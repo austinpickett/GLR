@@ -265,13 +265,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = function (_ref) {
     var _ref$data = _ref.data,
         date = _ref$data.date,
         link = _ref$data.link,
         title = _ref$data.title,
         _embedded = _ref$data._embedded;
-    return React.createElement(
+    return _react2.default.createElement(
         "article",
         {
             className: "article",
@@ -279,27 +285,27 @@ exports.default = function (_ref) {
             itemScope: true,
             itemType: "http://schema.org/BlogPosting"
         },
-        React.createElement(
+        _react2.default.createElement(
             "figure",
             null,
-            React.createElement("img", { src: _embedded['wp:featuredmedia'][0].source_url })
+            _react2.default.createElement("img", { src: _embedded['wp:featuredmedia'][0].source_url })
         ),
-        React.createElement(
+        _react2.default.createElement(
             "div",
             { className: "excerpt" },
-            React.createElement(
+            _react2.default.createElement(
                 "div",
                 { className: "meta" },
                 _embedded.author[0].name,
                 " | ",
                 date
             ),
-            React.createElement(
+            _react2.default.createElement(
                 "a",
                 { href: link },
                 title.rendered
             ),
-            React.createElement(
+            _react2.default.createElement(
                 "div",
                 { className: "tag" },
                 _embedded['wp:term'][0][0].name
@@ -308,14 +314,18 @@ exports.default = function (_ref) {
     );
 };
 
-},{}],6:[function(require,module,exports){
-"use strict";
+},{"react":198}],6:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _post = require("./post");
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _post = require('./post');
 
 var _post2 = _interopRequireDefault(_post);
 
@@ -323,20 +333,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function (_ref) {
     var results = _ref.results;
-    return React.createElement(
-        "div",
-        { className: "the-posts row wrapper news" },
-        React.createElement(
-            "div",
-            { className: "articles" },
+    return _react2.default.createElement(
+        'div',
+        { className: 'the-posts row wrapper news' },
+        _react2.default.createElement(
+            'div',
+            { className: 'articles' },
             results.map(function (x) {
-                return React.createElement(_post2.default, { data: x, key: Math.random() });
+                return _react2.default.createElement(_post2.default, { data: x, key: Math.random() });
             })
         )
     );
 };
 
-},{"./post":5}],7:[function(require,module,exports){
+},{"./post":5,"react":198}],7:[function(require,module,exports){
 'use strict';
 
 (function ($) {
