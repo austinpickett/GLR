@@ -71,18 +71,14 @@ $terms = get_terms('issue_topic');
 
 
                     <?php
-                        $posts = get_posts(
-                            array(
-                                'post_type' => 'issue',
-                                'tax_query' => array(
-                                    array(
-                                        'taxonomy' => 'issue_topic',
-                                        'field' => 'term_id',
-                                        'terms' => $term->term_id,
-                                    )
-                                )
-                            )
-                        );
+                        $posts = get_posts(array(
+                            'post_type' => 'issue',
+                            'tax_query' => array(array(
+                                'taxonomy' => 'issue_topic',
+                                'field' => 'term_id',
+                                'terms' => $term->term_id,
+                            ))
+                        ));
                     ?>
                     <div class="links">
                         <ul>

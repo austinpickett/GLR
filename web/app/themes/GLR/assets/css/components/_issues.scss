@@ -17,6 +17,17 @@
     margin-top: $pad;
 }
 
+@media (min-width: $small) {
+    .clr-position {
+        padding-right: 40px;
+    }
+
+    .opp-position {
+        padding-left: 40px; 
+    }
+}
+
+
 .clr-position,
 .opp-position {
     h4 {

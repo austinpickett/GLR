@@ -2,7 +2,8 @@
 /**
  * GLR
  *
- * Single post
+ * Template Name: Judicial Restrain Elections
+ * Template Post Type: issue
  */
 
 get_header();
@@ -64,17 +65,10 @@ the_post();
     </div>
 </div>
 
-<div class="join-callout dark-blue" />
-    <div class="wrapper center-align">
-        <h2>Take Action</h2>
-        <p>Lorem ipsum dolor sit amet consectetur<br />adipisicing elit. Aut, provident.</p>
-    </div>
-</div>
-
 <div class="reforms">
     <div class="wrapper center-align">
         <img src="<?=assetDir?>/img/reforms.png" />
-        <h2>Policy Analysis</h2>
+        <h2><?=CFS()->get('analysis_header')?></h2>
     </div>
 
     <?php get_search_form() ?>
@@ -122,6 +116,13 @@ the_post();
             <div class="related-resources view-all">
                 <a href="/resources/">View All Resources</a>
             </div>
+        </div>
+    </div>
+
+    <div class="join-callout dark-blue" />
+        <div class="wrapper center-align">
+            <h2>Take Action</h2>
+            <p>Lorem ipsum dolor sit amet consectetur<br />adipisicing elit. Aut, provident.</p>
         </div>
     </div>
 </div>
