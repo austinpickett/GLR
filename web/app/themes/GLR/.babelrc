@@ -1,4 +1,4 @@
 {
 	"presets": ["env", "react"],
-	"plugins": ["inline-react-svg", "transform-decorators-legacy"]
+	"plugins": ["inline-react-svg", "transform-decorators-legacy", "transform-regenerator", "transform-runtime"]
 }

@@ -6,9 +6,9 @@ export default ({ data: {
   _embedded
 } }) => (
   <article
-      className="article" 
-      role="article" 
-      itemScope 
+      className="article"
+      role="article"
+      itemScope
       itemType="http://schema.org/BlogPosting"
   >
       <figure>
@@ -17,7 +17,7 @@ export default ({ data: {
 
       <div className="excerpt">
           <div className="meta">{_embedded.author[0].name} | {date}</div>
-          <a href={link}>{title.rendered}</a>
+          <a href={link} dangerouslySetInnerHTML={{__html: title.rendered}} />
 
           <div className="tag">{_embedded['wp:term'][0][0].name}</div>
       </div>

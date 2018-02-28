@@ -6,7 +6,7 @@
  */
 
 ?>
-<article post_class() class="article" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="article" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <figure>
         <img src="<?=get_the_post_thumbnail_url()?>" />
     </figure>
