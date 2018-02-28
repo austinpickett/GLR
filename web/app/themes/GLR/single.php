@@ -28,7 +28,7 @@ the_post();
 	</div>
 
 	<div class="center-align">
-		<a href="javascript:;" class="share">Share Article</a>
+		<?php echo do_shortcode('[addtoany]'); ?>
 	</div>
 
 	<hr />

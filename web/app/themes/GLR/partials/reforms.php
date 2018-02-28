@@ -1,7 +1,7 @@
 <div class="reforms">
     <div class="wrapper center-align">
         <img src="<?=assetDir?>/img/reforms.png" />
-        <h2>Policy Analysis</h2>
+        <h2><?=CFS()->get('analysis_header')?></h2>
     </div>
 
     <?php get_search_form() ?>

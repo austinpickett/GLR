@@ -1,0 +1,7 @@
+a[class*="a2a_button_"] {
+    display: none !important;
+}
+
+.addtoany_share {
+    @extend .share;
+}
