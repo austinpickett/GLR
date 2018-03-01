@@ -18,16 +18,16 @@ export default class Filters extends Component {
   }
 
   async componentWillMount() {
-    const results = await this.fetchPosts(`per_page=10&_embed`)
+    const { results } = await this.fetchPosts(`per_page=10`)
     this.setState({ results })
   }
 
   async fetchPosts(query) {
-    return await fetch(`${API}?${query}`).then(response => {
+    return await fetch(`${API}?${query}&_embed`).then(response => {
       if (response.ok) {
-          return Promise.resolve(response);
+        return Promise.resolve(response);
       } else {
-          return Promise.reject(new Error('Failed to load'));
+        return Promise.reject(new Error('Failed to load'));
       }
     }).then(response => {
       return response.json()
@@ -38,24 +38,32 @@ export default class Filters extends Component {
 
   async handleSubmit (e) {
     e.preventDefault()
-
-    const s = e.currentTarget.s
-    const { results } = await this.fetchPosts(`search=${s}&_embed`)
-
+    const { results } = await this.fetchPosts(e.currentTarget.value)
     this.setState({ results })
   }
 
   render() {
     return (
       <div className='filters-wrapper'>
-        <form className='filters' action='/' onSubmit={this.handleSubmit}>
+        <form className='filters' action='javascript:;' onSubmit={this.handleSubmit}>
           <div className='wrapper'>
-            <select>
-              <option>Sort By All</option>
+            <select
+              name='sort'
+              onChange={this.handleSubmit}
+            >
+              <option value='all'>Sort By All</option>
+              <option value='orderby=date'>Sort By Date</option>
+              <option value='orderby=title'>Sort By Alpha</option>
             </select>
 
-            <select>
-              <option>Sort By All</option>
+            <select
+              name='secondary'
+              onChange={this.handleSubmit}
+            >
+              <option value='orderby=title&order=asc'>A to Z</option>
+              <option value='orderby=title&order=desc'>Z to A</option>
+              <option value='orderby=date&order=asc'>Newest to Oldest</option>
+              <option value='orderby=date&order=desc'>Oldest to Newest</option>
             </select>
 
             <input type='text' className='search' name='s' />

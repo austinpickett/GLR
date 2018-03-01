@@ -16,7 +16,7 @@ export default ({ data: {
       </figure>
 
       <div className="excerpt">
-          <div className="meta">{_embedded.author[0].name} | {date}</div>
+          <div className="meta">{_embedded.author[0].name} | {new Date(date).toLocaleDateString()}</div>
           <a href={link} dangerouslySetInnerHTML={{__html: title.rendered}} />
 
           <div className="tag">{_embedded['wp:term'][0][0].name}</div>

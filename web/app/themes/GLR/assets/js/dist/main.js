@@ -228,20 +228,22 @@ var Filters = function (_Component) {
     key: 'componentWillMount',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        var results;
+        var _ref2, results;
+
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return this.fetchPosts('per_page=10&_embed');
+                return this.fetchPosts('per_page=10');
 
               case 2:
-                results = _context.sent;
+                _ref2 = _context.sent;
+                results = _ref2.results;
 
                 this.setState({ results: results });
 
-              case 4:
+              case 5:
               case 'end':
                 return _context.stop();
             }
@@ -258,13 +260,13 @@ var Filters = function (_Component) {
   }, {
     key: 'fetchPosts',
     value: function () {
-      var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(query) {
+      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(query) {
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return fetch(API + '?' + query).then(function (response) {
+                return fetch(API + '?' + query + '&_embed').then(function (response) {
                   if (response.ok) {
                     return _promise2.default.resolve(response);
                   } else {
@@ -288,7 +290,7 @@ var Filters = function (_Component) {
       }));
 
       function fetchPosts(_x) {
-        return _ref2.apply(this, arguments);
+        return _ref3.apply(this, arguments);
       }
 
       return fetchPosts;
@@ -296,27 +298,24 @@ var Filters = function (_Component) {
   }, {
     key: 'handleSubmit',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(e) {
-        var s, _ref4, results;
+      var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(e) {
+        var _ref5, results;
 
         return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 e.preventDefault();
+                _context3.next = 3;
+                return this.fetchPosts(e.currentTarget.value);
 
-                s = e.currentTarget.s;
-                _context3.next = 4;
-                return this.fetchPosts('search=' + s + '&_embed');
-
-              case 4:
-                _ref4 = _context3.sent;
-                results = _ref4.results;
-
+              case 3:
+                _ref5 = _context3.sent;
+                results = _ref5.results;
 
                 this.setState({ results: results });
 
-              case 7:
+              case 6:
               case 'end':
                 return _context3.stop();
             }
@@ -325,7 +324,7 @@ var Filters = function (_Component) {
       }));
 
       function handleSubmit(_x2) {
-        return _ref3.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       }
 
       return handleSubmit;
@@ -338,26 +337,57 @@ var Filters = function (_Component) {
         { className: 'filters-wrapper' },
         _react2.default.createElement(
           'form',
-          { className: 'filters', action: '/', onSubmit: this.handleSubmit },
+          { className: 'filters', action: 'javascript:;', onSubmit: this.handleSubmit },
           _react2.default.createElement(
             'div',
             { className: 'wrapper' },
             _react2.default.createElement(
               'select',
-              null,
+              {
+                name: 'sort',
+                onChange: this.handleSubmit
+              },
               _react2.default.createElement(
                 'option',
-                null,
+                { value: 'all' },
                 'Sort By All'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: 'orderby=date' },
+                'Sort By Date'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: 'orderby=title' },
+                'Sort By Alpha'
               )
             ),
             _react2.default.createElement(
               'select',
-              null,
+              {
+                name: 'secondary',
+                onChange: this.handleSubmit
+              },
               _react2.default.createElement(
                 'option',
-                null,
-                'Sort By All'
+                { value: 'orderby=title&order=asc' },
+                'A to Z'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: 'orderby=title&order=desc' },
+                'Z to A'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: 'orderby=date&order=asc' },
+                'Newest to Oldest'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: 'orderby=date&order=desc' },
+                'Oldest to Newest'
               )
             ),
             _react2.default.createElement('input', { type: 'text', className: 'search', name: 's' })
@@ -427,7 +457,7 @@ exports.default = function (_ref) {
                 { className: "meta" },
                 _embedded.author[0].name,
                 " | ",
-                date
+                new Date(date).toLocaleDateString()
             ),
             _react2.default.createElement("a", { href: link, dangerouslySetInnerHTML: { __html: title.rendered } }),
             _react2.default.createElement(

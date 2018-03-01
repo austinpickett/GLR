@@ -13,7 +13,7 @@
         <div>
             <p class="copy">Georgians for Lawsuit Reform is an organization focused on ensuring a fair, balanced and efficient civil justice system for all citizens.</p>
 
-            <p class="copyright">&copy; <?=date('Y')?> georgians for lawsuit reform. ALL RIGHTS RESERVED.<a href="javascript:;">privacy & terms</a></p>
+            <p class="copyright">&copy; <?=date('Y')?> georgians for lawsuit reform. ALL RIGHTS RESERVED.<a href="/privacy/">privacy & terms</a></p>
         </div>
     </div>
 </footer>

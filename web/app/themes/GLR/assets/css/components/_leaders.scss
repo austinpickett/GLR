@@ -13,10 +13,9 @@
             position: relative;
             margin: 0 auto;
             overflow: hidden;
-
-            img {
-                @extend .cover;
-            }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         strong {

@@ -19,15 +19,13 @@ the_post();
 	<div id="page" class="col s12" itemprop="MainContentOfPage">
         <?=Template::partial('intro.php') ?>
         <hr />
-        
+
         <div class="center-align">
             <?php if ($leaders = CFS()->get('leaders')): ?>
             <div class="leaders">
                 <?php foreach ($leaders AS $leader): ?>
                 <figure>
-                    <div class="leader-image">
-                        <img src="<?=$leader['leader_image']?>" />
-                    </div>
+                    <div class="leader-image" style="background-image: url(<?=$leader['leader_image']?>)"></div>
 
                     <figcaption>
                         <h3><?=$leader['leader_name']?></h3>
