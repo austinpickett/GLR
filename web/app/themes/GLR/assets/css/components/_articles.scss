@@ -67,7 +67,7 @@
 
     .excerpt {
         padding: 35px;
-        
+
         a {
             color: $blue;
             font-size: 44px;
@@ -76,14 +76,27 @@
             letter-spacing: 0;
             text-transform: capitalize;
         }
-    }
 
+
+    }
     .excerpt, figure {
         width: 50%;
     }
 
     figure img {
         width: 100%
+    }
+
+    @media (max-width: $small) {
+        .excerpt a {
+            margin-top: 10px;
+            display: block;
+            font-size: 22px;
+        }
+
+        .filters-wrapper & figure {
+            width: 100% !important;
+        }
     }
 
     .meta {

@@ -46,15 +46,14 @@
 		text-align: center;
 		padding: $pad;
 
-		img {
-			margin: 0 auto;
-		}
-
 		a {
 			margin: 0 !important;
 		}
 		.wrapper div, .copy, p  {
 			width: 100% !important;
+		}
+		.logo-stacked {
+			margin: 0 auto;
 		}
 	}
 }
@@ -68,7 +67,7 @@
 	.social-footer {
 		display: flex;
 		align-items: center;
-		
+
 		i {
 			margin-left: auto;
 			margin-top: 10px;

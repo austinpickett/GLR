@@ -17,10 +17,10 @@ the_post();
 <section id="content" role="main">
 <div class="wrapper">
     <div class="row">
-        <div class="col s4 issue-img">
+        <div class="col s12 m4 issue-img">
             <img src="<?=assetDir?>/img/legislative-big.png" />
         </div>
-        <div class="col s8 issue-intro">
+        <div class="col s12 m8 issue-intro">
             <h1><?=the_title()?></h1>
             <?=the_content()?>
         </div>

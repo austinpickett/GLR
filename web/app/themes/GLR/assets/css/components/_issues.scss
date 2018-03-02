@@ -10,7 +10,10 @@
 
 .issue-img {
     justify-content: center;
-    border-right: 3px solid $borderGrey;
+
+    @media (min-width: $small) {
+        border-right: 3px solid $borderGrey;
+    }
 }
 
 .problem-copy {
@@ -22,7 +25,7 @@
 }
 
 .opp-position {
-    padding-left: 40px !important; 
+    padding-left: 40px !important;
 }
 
 .clr-position,
@@ -39,6 +42,10 @@
 
 .reforms {
     padding: $pad 0;
+}
+
+.reforms h2 {
+    margin-bottom: 40px
 }
 
 .issue-callouts a:hover {
@@ -62,7 +69,7 @@
             }
         }
 
-        
+
         figure, .links {
             width: 50%;
             padding: 40px;
@@ -93,7 +100,7 @@
                 color: #878b8c;
                 letter-spacing: .1em;
             }
-            
+
             li {
                 font-family: $heading;
                 list-style: none;

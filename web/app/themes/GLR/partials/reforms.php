@@ -4,7 +4,6 @@
         <h2><?=CFS()->get('analysis_header')?></h2>
     </div>
 
-    <?php get_search_form() ?>
 
     <div class="row wrapper">
         <div class="col s12 m8">
@@ -51,4 +50,7 @@
             </div>
         </div>
     </div>
+
+    <?php get_search_form() ?>
+
 </div>

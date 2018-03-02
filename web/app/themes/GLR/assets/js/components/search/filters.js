@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import serialize from 'form-serialize'
 import Results from './results'
 
-const API = 'http://localhost:8000/wp/wp-json/wp/v2/posts'
+const API = 'http://glr.thegkwco.com/wp-json/wp/v2/posts'
 
 export default class Filters extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class Filters extends Component {
   }
 
   async componentWillMount() {
-    const { results } = await this.fetchPosts(`per_page=10`)
+    const results = await this.fetchPosts(`per_page=10`)
     this.setState({ results })
   }
 
@@ -38,7 +38,14 @@ export default class Filters extends Component {
 
   async handleSubmit (e) {
     e.preventDefault()
-    const { results } = await this.fetchPosts(e.currentTarget.value)
+
+    let s
+    if (s = e.currentTarget.s) {
+      const results = await this.fetchPosts(`search=${s}&_embed`)
+      this.setState({ results })
+    }
+
+    const results = await this.fetchPosts(`${e.currentTarget.value}&_embed`)
     this.setState({ results })
   }
 

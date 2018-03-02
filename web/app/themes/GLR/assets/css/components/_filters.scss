@@ -13,9 +13,27 @@
             padding: 10px !important;
             margin: 0 20px !important;
         }
+
+        @media (max-width: $small) {
+            flex-wrap: wrap;
+
+            select {
+                width: 100%;
+            }
+
+            select, input {
+                margin: 10px 20px !important;
+            }
+        }
     }
 }
 
-.filters-wrapper figure {
-    width: 25% !important;
+.filters-wrapper {
+    figure {
+        width: 25% !important;
+    }
+
+    .excerpt a {
+        font-size: 22px !important;
+    }
 }

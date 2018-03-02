@@ -200,13 +200,13 @@ var _formSerialize = require('form-serialize');
 
 var _formSerialize2 = _interopRequireDefault(_formSerialize);
 
-var _results = require('./results');
+var _results2 = require('./results');
 
-var _results2 = _interopRequireDefault(_results);
+var _results3 = _interopRequireDefault(_results2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var API = 'http://localhost:8000/wp/wp-json/wp/v2/posts';
+var API = 'http://glr.thegkwco.com/wp-json/wp/v2/posts';
 
 var Filters = function (_Component) {
   (0, _inherits3.default)(Filters, _Component);
@@ -228,8 +228,7 @@ var Filters = function (_Component) {
     key: 'componentWillMount',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        var _ref2, results;
-
+        var results;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -238,12 +237,11 @@ var Filters = function (_Component) {
                 return this.fetchPosts('per_page=10');
 
               case 2:
-                _ref2 = _context.sent;
-                results = _ref2.results;
+                results = _context.sent;
 
                 this.setState({ results: results });
 
-              case 5:
+              case 4:
               case 'end':
                 return _context.stop();
             }
@@ -260,7 +258,7 @@ var Filters = function (_Component) {
   }, {
     key: 'fetchPosts',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(query) {
+      var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(query) {
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -290,7 +288,7 @@ var Filters = function (_Component) {
       }));
 
       function fetchPosts(_x) {
-        return _ref3.apply(this, arguments);
+        return _ref2.apply(this, arguments);
       }
 
       return fetchPosts;
@@ -298,24 +296,40 @@ var Filters = function (_Component) {
   }, {
     key: 'handleSubmit',
     value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(e) {
-        var _ref5, results;
+      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(e) {
+        var s, _results, results;
 
         return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 e.preventDefault();
-                _context3.next = 3;
-                return this.fetchPosts(e.currentTarget.value);
 
-              case 3:
-                _ref5 = _context3.sent;
-                results = _ref5.results;
+                s = void 0;
+
+                if (!(s = e.currentTarget.s)) {
+                  _context3.next = 7;
+                  break;
+                }
+
+                _context3.next = 5;
+                return this.fetchPosts('search=' + s + '&_embed');
+
+              case 5:
+                _results = _context3.sent;
+
+                this.setState({ results: _results });
+
+              case 7:
+                _context3.next = 9;
+                return this.fetchPosts(e.currentTarget.value + '&_embed');
+
+              case 9:
+                results = _context3.sent;
 
                 this.setState({ results: results });
 
-              case 6:
+              case 11:
               case 'end':
                 return _context3.stop();
             }
@@ -324,7 +338,7 @@ var Filters = function (_Component) {
       }));
 
       function handleSubmit(_x2) {
-        return _ref4.apply(this, arguments);
+        return _ref3.apply(this, arguments);
       }
 
       return handleSubmit;
@@ -393,7 +407,7 @@ var Filters = function (_Component) {
             _react2.default.createElement('input', { type: 'text', className: 'search', name: 's' })
           )
         ),
-        _react2.default.createElement(_results2.default, this.state)
+        _react2.default.createElement(_results3.default, this.state)
       );
     }
   }]);
